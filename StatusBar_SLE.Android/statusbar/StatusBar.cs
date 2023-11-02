@@ -31,13 +31,14 @@ namespace StatusBar_SLE.Droid.statusbar
         }
         public void CambiarColor()
         {
+            MostrarStatusBar();
             if (Build.VERSION.SdkInt>= BuildVersionCodes.M)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     var currentWindow = GetCurrentWindow();
                     currentWindow.DecorView.SystemUiVisibility = (StatusBarVisibility)SystemUiFlags.LayoutStable;
-                    currentWindow.SetStatusBarColor(Android.Graphics.Color.Rgb(18,18,18));
+                    currentWindow.SetStatusBarColor(Android.Graphics.Color.Rgb(255, 0, 0));
                 });
             }
             
@@ -67,6 +68,7 @@ namespace StatusBar_SLE.Droid.statusbar
 
         public void Transparente()
         {
+            MostrarStatusBar();
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
             {
@@ -80,6 +82,7 @@ namespace StatusBar_SLE.Droid.statusbar
         }
         public void Traslucido()
         {
+            MostrarStatusBar();
             var activity = (Activity)Forms.Context;
             var attrs = activity.Window.Attributes;
             _originalFlag = attrs.Flags;

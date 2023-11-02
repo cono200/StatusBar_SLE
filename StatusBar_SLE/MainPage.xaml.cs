@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using StatusBar_SLE.VistaModelo;
 
 namespace StatusBar_SLE
 {
@@ -13,6 +14,7 @@ namespace StatusBar_SLE
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new VMmainpage();
         }
     }
 }
